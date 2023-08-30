@@ -1,0 +1,279 @@
+﻿@import './utils.scss';
+@import './font.scss';
+
+body {
+  margin: 0;
+}
+
+.bg-green {
+  background-color: #25c55b !important;
+}
+.bg-red {
+  background-color: #ef485c !important;
+}
+.bg-yellow {
+  background-color: #fed32f !important;
+}
+
+.bg-grey {
+  background-color: #f7f7f7;
+  position: relative;
+}
+
+.container {
+  width: 40%;
+  overflow-x: hidden;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  .title {
+    @include vw-convert-desktop('margin', 60px 0px 110px 0px);
+    font-family: 'Jalnan';
+    position: relative;
+    @include vw-convert-desktop('font-size', 30px);
+
+    @include mobile {
+      @include vw-convert-mobile('margin', 50px 0px);
+      @include vw-convert-mobile('font-size', 30px);
+    }
+    span {
+      color: #4684eb;
+    }
+  }
+
+  .content {
+    width: 100%;
+    background-color: #323351;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 70%;
+      height: auto;
+      margin-top: -7%;
+    }
+
+    i {
+      color: grey;
+      @include vw-convert-desktop('font-size', 60px);
+      @include vw-convert-desktop('margin', 30px 0px);
+      cursor: pointer;
+    }
+
+    .research-title {
+      width: 60%;
+      font-family: 'SCDream2';
+      font-weight: 600;
+      color: #fff;
+      border: 1px solid #fff;
+      border-bottom: none;
+      @include vw-convert-desktop('padding-top', 30px);
+      @include vw-convert-desktop('font-size', 19px);
+      @include vw-convert-desktop('height', 150px);
+      @include vw-convert-desktop('border-top-left-radius', 20px);
+      @include vw-convert-desktop('border-top-right-radius', 20px);
+    }
+  }
+}
+
+.footer {
+  background-color: #323351;
+  width: 100%;
+  @include vw-convert-desktop('height', 250px);
+  @include vw-convert-desktop('margin-top', -200px);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  i {
+    color: grey;
+    @include vw-convert-desktop('font-size', 60px);
+    @include vw-convert-desktop('margin', 30px 0px);
+    cursor: pointer;
+  }
+}
+
+.box-container {
+  z-index: 2;
+  width: 70%;
+  margin: auto;
+  transform: translateY(-6.5%);
+  // margin-top: -50px;
+  .box {
+    // height: 100px;
+    background-color: #fff;
+    @include vw-convert-desktop('border-radius', 20px);
+    position: relative;
+    @include vw-convert-desktop('padding-bottom', 40px);
+    &:nth-child(n+2) {
+      @include vw-convert-desktop('margin-top', 40px);
+    }
+
+    .number {
+      position: absolute;
+      @include vw-convert-desktop('left', 15px);
+      @include vw-convert-desktop('top', 15px);
+      @include vw-convert-desktop('font-size', 14px);
+      color: grey;
+      width: 6%;
+      aspect-ratio: 1/1;
+      background-color: #eeeeee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-family: 'Jalnan';
+    }
+
+    .question {
+      width: 80%;
+      margin: auto;
+      @include vw-convert-desktop('padding-top', 40px);
+      @include vw-convert-desktop('font-size', 23px);
+      line-height: 130%;
+      font-family: 'SangSangBodyM';
+      text-align: center;
+    }
+
+    .answer-container {
+      width: 40%;
+      @include vw-convert-desktop('height', 90px);
+      margin: auto;
+      @include vw-convert-desktop('margin-top', 20px);
+
+      .choose-btns {
+        background-color: #1f2120;
+        width: 100%;
+        height: 80%;
+        margin: auto;
+        @include vw-convert-desktop('border-radius', 50px);
+        border: 2px solid grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .button {
+          height: 80%;
+          aspect-ratio: 1/1;
+          background-color: #e6e6e6;
+          border-radius: 50%;
+          @include vw-convert-desktop('margin', 5px);
+          cursor: pointer;
+        }
+      }
+
+      .texts {
+        display: flex;
+        @include vw-convert-desktop('margin-top', 10px);
+        justify-content: center;
+        p {
+          @include vw-convert-desktop('margin', 0 5px);
+          @include vw-convert-desktop('font-size', 16px);
+          font-family: 'SCDream5';
+          color: grey;
+        }
+      }
+    }
+  }
+}
+
+.result {
+  background-color: #323351;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .result-container {
+    width: 35%;
+
+    .score {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      @include vw-convert-desktop('gap', 20px);
+      .list {
+        width: 100%;
+        aspect-ratio: 1/1.5;
+        @include vw-convert-desktop('border-radius', 20px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .title {
+          font-family: 'Jalnan';
+          color: #fff;
+          @include vw-convert-desktop('font-size', 25px);
+          @include vw-convert-desktop('margin-bottom', 20px);
+        }
+        img {
+          width: 40%;
+        }
+        .point {
+          font-family: 'SangSangTitleB';
+          color: #fff;
+          @include vw-convert-desktop('font-size', 35px);
+          margin: 0;
+          @include vw-convert-desktop('margin-top', 20px);
+        }
+      }
+
+      .rookie {
+        background-color: #6f50da;
+      }
+      .journey {
+        background-color: #4c68e3;
+      }
+      .master {
+        background-color: #4892f1;
+      }
+    }
+
+    .current-score {
+      width: 100%;
+      aspect-ratio: 2/1;
+      background-color: #2287fd;
+      @include vw-convert-desktop('border-radius', 20px);
+      @include vw-convert-desktop('margin-top', 20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 13%;
+        @include vw-convert-desktop('margin-bottom', 20px);
+      }
+
+      .title {
+        font-family: 'Jalnan';
+        color: #fff;
+        @include vw-convert-desktop('font-size', 40px);
+      }
+
+      .description {
+        font-family: 'Jalnan';
+        color: #fff;
+        @include vw-convert-desktop('margin-top', 10px);
+        @include vw-convert-desktop('font-size', 20px);
+      }
+
+      .score-button {
+        font-family: 'SangSangTitleM';
+        color: #fff;
+        @include vw-convert-desktop('margin-top', 20px);
+        @include vw-convert-desktop('font-size', 28px);
+        background-color: #0e2a7e;
+        width: 50%;
+        @include vw-convert-desktop('padding', 10px);
+        text-align: center;
+        @include vw-convert-desktop('border-radius', 20px);
+        cursor: pointer;
+      }
+    }
+  }
+}
